@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <File name="MyFile" fileName="../logs/ValidateMyNumber.log">
+            <PatternLayout>
+                <Pattern>%d{DATE} - %p - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    
+    <Loggers>
+        <Logger name="nz.co.validatemynumber.main.ValidateMyNumber" level="INFO" additivity="false">
+            <AppenderRef ref="MyFile"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="MyFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

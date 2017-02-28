@@ -1,0 +1,98 @@
+<style type="text/css">
+.tab-form
+{
+    margin: 20px 20px;
+}
+
+.tab-pane
+{
+    margin: 80px;
+}
+
+.valid-class {
+    border: 2px solid green !important;
+}
+
+.error-class {
+    border: 2px solid red !important;
+}
+
+.panel-validate-ird {
+    border-color: #ccc;
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-validate-ird input[type="text"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-validate-ird input:hover,
+.panel-validate-ird input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+</style>
+
+<div>
+    <div class="tab-form">
+        <uib-tabset active="activeForm">
+            <uib-tab index="0" heading="IRD Numbers">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="panel panel-validate-ird">
+                            <div class="panel-body">
+                                <form ng-controller="IRDController">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input ng-focus="irdNumberSelect()" ng-class="getInputStyle()" type="text" class="form-control" ng-model="irdnumber" placeholder="IRD Number" name="irdnumber" ng-required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <button class="btn btn-primary btn-block" ng-click="submit()">Validate!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="Bank Account Numbers">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="panel panel-validate-ird">
+                            <div class="panel-body">
+                                <form ng-controller="BankAccountController">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input ng-focus="bankAccountSelect()" ng-class="getInputStyle()" type="text" class="form-control" ng-model="bankaccount" placeholder="Bank Account Number" name="bankaccount" ng-required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <button class="btn btn-primary btn-block" ng-click="submit()">Validate!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>
